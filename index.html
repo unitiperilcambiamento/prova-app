@@ -299,7 +299,7 @@
  .question-arrow.next { right: -17px; }
  .answer-bubble { width: 44px; height: 44px; border-radius: 50%; border: none; background: var(--accent-color); color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; transition: transform 0.2s; }
  .answer-bubble:active { transform: translate(-50%, -50%) scale(0.9); }
- .question-counter { text-align: center; margin-top: 20px; margin-bottom: 12px; color: #64748b; font-size: 12px; font-weight: 700; }
+ .question-counter { text-align: center; margin-top: 80px; margin-bottom: 12px; color: #64748b; font-size: 12px; font-weight: 700; }
  .question-answer-pocket { display: none; background: #ffffff; border: 1px solid #f1f5f9; border-radius: 18px; padding: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); flex-direction: column; gap: 10px; }
  .question-answer-pocket.active { display: flex; animation: smoothFade 0.4s; }
  .question-answer-pocket textarea { min-height: 82px; resize: none; }
@@ -586,18 +586,6 @@
  <button class="add-question-btn" onclick="navigateTo('view-add-question', this, 'FAI UNA DOMANDA')">+</button>
  </div>
  </div>
- <div class="ngl-card">
- <div class="ngl-header red-gradient">Anonimo</div>
- <div class="ngl-body">
- <p class="question-text">Quali sono le proposte principali per strutturare le assemblee?</p>
- </div>
- </div>
- <div class="ngl-card">
- <div class="ngl-header purple-gradient">Anonimo</div>
- <div class="ngl-body">
- <p class="question-text">Riusciremo ad avere sconti reali anche per i libri scolastici?</p>
- </div>
- </div>
  <div id="domandeDynamicHome" style="display: contents;"></div>
  </div>
  </section>
@@ -608,33 +596,10 @@
  <span class="vedi-tutto" onclick="navigateTo('view-all-market', this, 'MARKETPLACE COMPLETO')">Vedi tutto</span>
  </div>
  <div class="market-scroll-container" id="marketHomeContainer">
-
  <div class="create-card-market">
  <div class="market-create-body">
  <p class="prompt-text">Inizia a fare ripetizioni anche te!</p>
  <button class="add-market-btn" onclick="navigateTo('view-add-market', this, 'NUOVO ANNUNCIO')">+</button>
- </div>
- </div>
-
- <div class="market-card-scroll">
- <div class="market-info-scroll">
- <h4>Le basi della fisica</h4>
- <span class="market-author-scroll">Francesco Cerri</span>
- <div class="market-footer-scroll">
- <span class="price-tag" style="background:#0f172a; color:#fff; font-size:11px; padding:3px 8px; border-radius:10px;">35€</span>
- <span style="font-size:10.5px; color:#64748b; font-weight:600;">Libro</span>
- </div>
- </div>
- </div>
-
- <div class="market-card-scroll">
- <div class="market-info-scroll">
- <h4>Ripetizioni Matematica</h4>
- <span class="market-author-scroll">Elena Gatti (5°B)</span>
- <div class="market-footer-scroll">
- <span class="price-tag" style="background:#0f172a; color:#fff; font-size:11px; padding:3px 8px; border-radius:10px;">12€/h</span>
- <span style="font-size:10.5px; color:#64748b; font-weight:600;">Studio</span>
- </div>
  </div>
  </div>
  <div id="marketDynamicHome" style="display: contents;"></div>
@@ -653,7 +618,7 @@
  <div class="ngl-card single-question-card" id="questionViewerCard">
  <button class="question-arrow prev" onclick="changeQuestion(-1)">&#10094;</button>
  <div class="ngl-header red-gradient" id="questionViewerHeader">Anonimo</div>
- <div class="ngl-body"><p class="question-text" id="questionViewerText">Quali sono le proposte principali per strutturare le assemblee?</p></div>
+ <div class="ngl-body"><p class="question-text" id="questionViewerText"></p></div>
  <div class="question-bottom-hole">
  <button class="answer-bubble" onclick="toggleAnswerPocket()">
  <svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
@@ -683,51 +648,6 @@
  </div>
 
  <div class="market-grid-container" id="gridMarketplace">
-
- <div class="market-card-scroll market-card-grid" data-title="Le basi della fisica" data-author="Francesco Cerri" data-price="35">
- <div class="market-info-scroll">
- <h4>Le basi della fisica</h4>
- <span class="market-author-scroll">Francesco Cerri</span>
- <div class="market-footer-scroll">
- <span class="price-tag" style="background:#0f172a; color:#fff; font-size:11px; padding:3px 8px; border-radius:10px;">35€</span>
- <span style="font-size:10.5px; color:#64748b; font-weight:600;">Libro</span>
- </div>
- </div>
- </div>
-
- <div class="market-card-scroll market-card-grid" data-title="Ripetizioni Matematica" data-author="Elena Gatti (5°B)" data-price="12">
- <div class="market-info-scroll">
- <h4>Ripetizioni Matematica</h4>
- <span class="market-author-scroll">Elena Gatti (5°B)</span>
- <div class="market-footer-scroll">
- <span class="price-tag" style="background:#0f172a; color:#fff; font-size:11px; padding:3px 8px; border-radius:10px;">12€/h</span>
- <span style="font-size:10.5px; color:#64748b; font-weight:600;">Studio</span>
- </div>
- </div>
- </div>
-
- <div class="market-card-scroll market-card-grid" data-title="Compendio Storia" data-author="Alessandro Neri" data-price="18">
- <div class="market-info-scroll">
- <h4>Compendio Storia</h4>
- <span class="market-author-scroll">Alessandro Neri</span>
- <div class="market-footer-scroll">
- <span class="price-tag" style="background:#0f172a; color:#fff; font-size:11px; padding:3px 8px; border-radius:10px;">18€</span>
- <span style="font-size:10.5px; color:#64748b; font-weight:600;">Libro</span>
- </div>
- </div>
- </div>
-
- <div class="market-card-scroll market-card-grid" data-title="Ripetizioni Chimica" data-author="Marco Polo (4°A)" data-price="15">
- <div class="market-info-scroll">
- <h4>Ripetizioni Chimica</h4>
- <span class="market-author-scroll">Marco Polo (4°A)</span>
- <div class="market-footer-scroll">
- <span class="price-tag" style="background:#0f172a; color:#fff; font-size:11px; padding:3px 8px; border-radius:10px;">15€/h</span>
- <span style="font-size:10.5px; color:#64748b; font-weight:600;">Studio</span>
- </div>
- </div>
- </div>
-
  <div id="marketDynamicList" style="display: contents;"></div>
  </div>
  </div>
@@ -1198,12 +1118,7 @@
  let likedPosts = new Set(JSON.parse(localStorage.getItem(likedStorageKey) || '[]').map(Number));
  let selectedQuestionGradient = 'orange-gradient';
  let questionViewerIndex = 0;
- const defaultQuestions = [
- { testo: 'Quali sono le proposte principali per strutturare le assemblee?', gradiente: 'red-gradient' },
- { testo: 'Riusciremo ad avere sconti reali anche per i libri scolastici?', gradiente: 'purple-gradient' },
- { testo: "Verranno organizzati tornei sportivi d'istituto?", gradiente: 'blue-gradient' },
- { testo: 'Come possiamo proporre nuovi partner per le convenzioni?', gradiente: 'orange-gradient' }
- ];
+ const defaultQuestions = [];
  let allQuestionsData = [...defaultQuestions];
  const navigateOriginale = window.navigateTo;
  if(typeof navigateOriginale === 'function') {
