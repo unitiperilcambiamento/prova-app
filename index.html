@@ -8,6 +8,7 @@
  <link rel="manifest" href="manifest.json">
  <meta name="apple-mobile-web-app-capable" content="yes">
  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+ <meta name="theme-color" id="theme-color-meta" content="#0f2d59">
  <meta name="apple-mobile-web-app-title" content="Lista 2">
  <meta name="mobile-web-app-capable" content="yes">
  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -950,6 +951,10 @@
  document.documentElement.style.setProperty('--primary-grad-end', endColor);
  document.documentElement.style.setProperty('--accent-color', accentColor);
  document.documentElement.style.setProperty('--accent-light', lightAccent);
+
+ // Aggiorna il colore della barra di stato sui dispositivi mobili
+ const metaThemeColor = document.getElementById('theme-color-meta');
+ if (metaThemeColor) metaThemeColor.setAttribute('content', startColor);
  }
 
  // 6. MOTORE CALENDARIO DINAMICO REALE SULLE ASSEMBLEE
